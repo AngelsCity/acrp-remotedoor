@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 name 'remote_door_menu'
-author 'Angels City Roleplay - Amy'
-description 'Remote Door Control Menu für ox_doorlock'
+author 'Angels City Roleplay - Amy 🏳️‍⚧️'
+description 'Remote Door Control Menu for ox_doorlock'
 
 lua54 'yes'
 
