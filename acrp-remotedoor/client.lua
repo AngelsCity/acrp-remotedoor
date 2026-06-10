@@ -29,7 +29,7 @@ local function PlayAnimation()
     TaskPlayAnim(ped, dict, name, 8.0, -8.0, Config.Animation.duration, Config.Animation.flag, 0, false, false, false)
 end
 
--- Menü öffnen
+
 local function OpenDoorMenu()
     local options = {}
 
@@ -73,14 +73,14 @@ local function OpenDoorMenu()
     lib.showContext('remote_door_main')
 end
 
--- Command
+
 if Config.EnableCommand then
     RegisterCommand(Config.CommandName, function()
         OpenDoorMenu()
     end)
 end
 
--- ox_target
+
 if Config.EnableTarget then
     exports.ox_target:addSphereZone({
         coords = Config.TargetCoords,
@@ -98,12 +98,12 @@ if Config.EnableTarget then
     })
 end
 
--- Sound
+
 RegisterNetEvent('remoteDoor:playSound', function(sound, volume, radius, doorId)
     local ped = PlayerPedId()
     local pCoords = GetEntityCoords(ped)
 
-    -- Türposition aus ox_doorlock holen
+    
     local door = exports.ox_doorlock:getDoor(doorId)
     if not door or not door.coords then return end
 
