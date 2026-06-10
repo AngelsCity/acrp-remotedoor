@@ -2,7 +2,7 @@ local function Debug(msg)
     print(('^3[RemoteDoor-DEBUG] ^7%s'):format(msg))
 end
 
--- Holt den Config-Eintrag für eine Tür
+
 local function GetDoorConfig(doorId)
     for _, d in ipairs(Config.RemoteDoors or {}) do
         if d.id == doorId then
@@ -12,7 +12,7 @@ local function GetDoorConfig(doorId)
     return nil
 end
 
--- ox_doorlock Debug beim Start
+
 CreateThread(function()
     Wait(2000)
     Debug('Starte ox_doorlock Tür-Scan...')
@@ -37,7 +37,7 @@ CreateThread(function()
     Debug('--- Ende Liste ---')
 end)
 
--- Haupt-Event
+
 RegisterNetEvent('remoteDoor:toggle', function(doorId, open)
     local src = source
 
@@ -53,7 +53,7 @@ RegisterNetEvent('remoteDoor:toggle', function(doorId, open)
 
     Debug(('Config gefunden: %s'):format(cfg.name))
 
-    -- Türdaten aus ox_doorlock holen
+    
     local okDoor, doorData = pcall(function()
         return exports.ox_doorlock:getDoor(doorId)
     end)
@@ -73,11 +73,11 @@ RegisterNetEvent('remoteDoor:toggle', function(doorId, open)
 
     Debug(('Setze Türstate: %s'):format(state))
 
-    -- Variante A: offizielles Event
+   
     Debug(('TriggerEvent("ox_doorlock:setState", %s, %s)'):format(doorId, state))
     TriggerEvent('ox_doorlock:setState', doorId, state)
 
-    -- Variante B: Export
+    
     if exports.ox_doorlock.setDoorState then
         Debug(('exports.ox_doorlock:setDoorState(%s, %s)'):format(doorId, state))
         exports.ox_doorlock:setDoorState(doorId, state)
@@ -90,7 +90,7 @@ RegisterNetEvent('remoteDoor:toggle', function(doorId, open)
         open and 'GEÖFFNET' or 'GESCHLOSSEN'
     ))
 
-    -- Sound an Clients
+    
     TriggerClientEvent('remoteDoor:playSound', -1, doorId, cfg.sound, cfg.soundVolume, cfg.soundRadius)
 
     Debug('----------------------------------------')
