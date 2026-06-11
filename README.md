@@ -39,3 +39,40 @@ A lightweight and modern remote door control system for FiveM. Fully compatible 
 ```/doorcontrol```
 
 Opens the remote door menu.
+
+# 🔨 W.I.P.
+
+- Custom sounds
+- Hold‑to‑open interaction
+- Multiple controllers
+- Remote opener item
+- Custom UI
+
+
+
+# 📝Changelog
+
+## Version: 1.0
+#### 🟢Added 
+- Published the Script
+- Added Changelog in ReadMe
+#### 🔴Removed
+- N/A
+#### 🟡Fixed
+- N/A
+
+## Version 2.0 [SOON]
+#### ❓Planed
+- Custom UI
+  - Admin Menu
+    - Keycard Creator
+    - Door Management
+    - etc
+- Custom Sounds
+- Hold Button
+- Intercom System
+- Remote Item
+- Multiple Opener
+- Hacking & Keypad / Code System
+- Keycard System
+- Keycard Logging System 
